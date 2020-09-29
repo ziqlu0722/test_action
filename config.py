@@ -12,4 +12,9 @@ class Config():
 class TestConfig(Config):
     TESTING = True
     SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'webapp_test_db')
+    if os.environ.get('GITHUB_WORKFLOW'):
+        SQLALCHEMY_DATABASE_URI = DB_URL = 'postgresql://{user}:{pw}@{url}/{db}'.format(user=postgres,
+                                                                                        pw=postgres,
+                                                                                        url=localhost:5432,
+                                                                                        db=github_actions)
     SQLALCHEMY_TRACK_MODIFICATIONS = False
