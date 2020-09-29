@@ -1,0 +1,54 @@
+##### SET UP VIRTUAL ENVIRONMENT #####
+
+# create and activate virtual environment
+cd <project_dir>
+python3 -m venv venv 
+source venv/bin/activate
+
+# export all dependencies
+pip freeze > requirements.txt
+
+# install all dependencies
+pip install -r requirements.txt
+
+##### MIGRATION #####
+
+# set database_url in environtment variables
+export DATABASE_URL="postgresql://localhost/webapp_db"
+
+# create the migration repository
+FLASK_APP=app.py
+flask db init
+
+# generates the migration script
+flask db migrate -m "user table"
+
+# apply the changes to the database
+flask db upgrade
+
+
+##### psql command lines #####
+
+# connect to database
+\c webapp_db
+
+# list of relations
+\dt 
+
+# display all rows
+SELECT * FROM "user";
+
+# delete all rows from table
+DELETE FROM "user";
+
+# create database
+CREATE DATABASE webapp_db;
+
+# delete database
+DROP DATABASE webapp_db;
+
+##### RUN THE APPLICATION #####
+
+export FLASK_APP=app.py
+flask run
+
