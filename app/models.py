@@ -41,7 +41,7 @@ class GUID(TypeDecorator):
 
 class User(db.Model):
 #     id = db.Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4, unique=True, nullable=False)
-    id = db.Column(GUID(), primary_key=True, default=str(uuid.uuid4()), unique=True, nullable=False)
+    id = db.Column(GUID(), primary_key=True, default=str(uuid.uuid4()), nullable=False)
     email_address = db.Column(db.String(120), unique=True, nullable=False)
     first_name = db.Column(db.String(60), nullable=False)
     last_name = db.Column(db.String(60), nullable=False)
