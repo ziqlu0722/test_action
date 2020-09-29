@@ -4,6 +4,7 @@ from flask_bcrypt import generate_password_hash, check_password_hash
 import re
 import uuid
 
+# this is to create UUID for sqlite
 from sqlalchemy.types import TypeDecorator, CHAR
 
 class GUID(TypeDecorator):
