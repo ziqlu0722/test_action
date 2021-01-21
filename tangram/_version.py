@@ -1,1 +1,2 @@
-__version__ = "0.2.0"
+import os
+__version__ = os.environ.get('TANGRAM_VERSION')
