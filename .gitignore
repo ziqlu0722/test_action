@@ -1,0 +1,17 @@
+# ignore large datasets
+Allen-Visium_Allen1_cell_centroids.pkl
+Allen-Visium_Allen1_cell_count.h5ad
+visp_sn_tpm_small_0430.h5ad
+__pycache__
+
+# ignore nb checkpoints
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# ignore PyCharm files
+.idea
+.DS_Store
+
+# ignore AnnDatas
+*.h5ad
+example/data/ 
