@@ -22,7 +22,7 @@ jobs:
     - name: Package and Upload
       env:
         TANGRAM_VERSION: ${{ github.event.release.tag_name }}
-        TWINE_USERNAME: tangram
+        TWINE_USERNAME: __token__
         TWINE_PASSWORD: ${{ secrets.PYPI_APIKEY }}
       run: |
         python3 setup.py sdist bdist_wheel
